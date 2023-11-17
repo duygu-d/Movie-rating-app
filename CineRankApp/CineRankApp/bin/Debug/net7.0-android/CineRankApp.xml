@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CineRankApp</name>
+    </assembly>
+    <members>
+        <member name="T:CineRankApp.ViewModel.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:CineRankApp.ViewModel.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:CineRankApp.ViewModel.BaseViewModel._isBusy"/>
+        </member>
+        <member name="P:CineRankApp.ViewModel.BaseViewModel.Title">
+            <inheritdoc cref="F:CineRankApp.ViewModel.BaseViewModel._title"/>
+        </member>
+        <member name="T:CineRankApp.ViewModel.FavouriteMoviesViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:CineRankApp.ViewModel.FavouriteMoviesViewModel.goToMovieDetailsCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToMovieDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToMovieDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToMovieDetails(CineRankApp.Model.CinemaMovie)"/>.</summary>
+        </member>
+        <member name="T:CineRankApp.ViewModel.MovieDetailsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CineRankApp.ViewModel.MovieDetailsViewModel.CinemaMovie">
+            <inheritdoc cref="F:CineRankApp.ViewModel.MovieDetailsViewModel._cinemaMovie"/>
+        </member>
+        <member name="F:CineRankApp.ViewModel.MovieDetailsViewModel.goBackCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoBackCommand"/>.</summary>
+        </member>
+        <member name="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CineRankApp.ViewModel.MovieDetailsViewModel.GoBackAsync"/>.</summary>
+        </member>
+        <member name="F:CineRankApp.ViewModel.MovieDetailsViewModel.ratingStarsTappedCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MovieDetailsViewModel.RatingStarsTappedCommand"/>.</summary>
+        </member>
+        <member name="P:CineRankApp.ViewModel.MovieDetailsViewModel.RatingStarsTappedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CineRankApp.ViewModel.MovieDetailsViewModel.OnRatingStarsTapped(System.Int32)"/>.</summary>
+        </member>
+        <member name="T:CineRankApp.ViewModel.MoviesViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:CineRankApp.ViewModel.MoviesViewModel.goToMovieDetailsCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MoviesViewModel.GoToMovieDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:CineRankApp.ViewModel.MoviesViewModel.GoToMovieDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CineRankApp.ViewModel.MoviesViewModel.GoToMovieDetails(CineRankApp.Model.CinemaMovie)"/>.</summary>
+        </member>
+        <member name="F:CineRankApp.ViewModel.MoviesViewModel.goToFavouriteMoviesCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MoviesViewModel.GoToFavouriteMoviesCommand"/>.</summary>
+        </member>
+        <member name="P:CineRankApp.ViewModel.MoviesViewModel.GoToFavouriteMoviesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CineRankApp.ViewModel.MoviesViewModel.GoToFavouriteMovies"/>.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CinemaMovie">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CinemaMovie" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CinemaMovie">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CinemaMovie" generated properties.</summary>
+        </member>
+    </members>
+</doc>

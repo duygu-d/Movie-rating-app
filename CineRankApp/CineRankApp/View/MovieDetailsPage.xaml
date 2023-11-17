@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:model="clr-namespace:CineRankApp.Model"
+             x:Class="CineRankApp.View.MovieDetailsPage"
+             x:DataType="viewmodel:MovieDetailsViewModel"
+             xmlns:viewmodel="clr-namespace:CineRankApp.ViewModel"
+             xmlns:controls="clr-namespace:CineRankApp.Controls"
+             Title="{Binding CinemaMovie.Title}">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,Auto,*"
+                  RowDefinitions="160,Auto">
+                <Grid
+                         Grid.ColumnSpan="3"
+                         HeightRequest="200">
+
+                    <Image HorizontalOptions="Fill"
+                           VerticalOptions="Fill"
+                           Aspect="AspectFill"
+                           Source="{Binding CinemaMovie.PosterPath}"/>
+
+                    <BoxView BackgroundColor="{StaticResource PrimaryDark}"
+                             Opacity="0.5"
+                             HorizontalOptions="FillAndExpand"/>
+                </Grid>
+                <Frame Grid.RowSpan="2"
+                       Grid.Column="1"
+                       HeightRequest="160"
+                       WidthRequest="160"
+                       CornerRadius="20"
+                       HorizontalOptions="Center"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       Margin="0,80,0,0">
+                    <Image Aspect="AspectFill"
+                           HeightRequest="160"
+                           WidthRequest="160"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Source="{Binding CinemaMovie.PosterPath}"/>
+                </Frame>
+
+            </Grid>
+            <VerticalStackLayout Padding="10,50,0,0" Spacing="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="{Binding CinemaMovie.ReleaseDate, StringFormat='Release: {0:dd.MM.yyyy}'}"
+                                Style="{StaticResource SmallLabel}"
+                               Grid.Column="0"/>
+
+                    <controls:RatingControl x:Name="StarRating" Margin="0,0,15,0"
+                        Value="{Binding CinemaMovie.UserRating}" Color="DarkCyan"
+                        RatingTappedCommand="{Binding RatingStarsTappedCommand}"
+                                            Grid.Column="2"
+                                            HorizontalOptions="Center"/>
+                </Grid>
+
+                <Label Text="{Binding CinemaMovie.Runtime, StringFormat='{0} minutes'}"
+                        Style="{StaticResource SmallLabel}"
+                       VerticalOptions="StartAndExpand"/>
+
+                <Label Text="Overview"
+                       Style="{StaticResource LargeLabel}"
+                       FontAttributes="Bold"
+                       Margin="0,40,0,0"/>
+                <Label Text="{Binding CinemaMovie.Overview}"
+                       Style="{StaticResource MediumLabel}"
+                       Margin="5,0,10,0"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

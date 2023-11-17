@@ -1,0 +1,1 @@
+C:\Users\Laptop\Desktop\CineRankApp\CineRankApp\CineRankApp.csproj;x64

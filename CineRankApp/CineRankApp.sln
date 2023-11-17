@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineRankApp", "CineRankApp\CineRankApp.csproj", "{A88A470F-0338-4166-9DD8-3B7ADE5FFF91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A88A470F-0338-4166-9DD8-3B7ADE5FFF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88A470F-0338-4166-9DD8-3B7ADE5FFF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88A470F-0338-4166-9DD8-3B7ADE5FFF91}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A88A470F-0338-4166-9DD8-3B7ADE5FFF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88A470F-0338-4166-9DD8-3B7ADE5FFF91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88A470F-0338-4166-9DD8-3B7ADE5FFF91}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43C6D6EC-80EA-4919-B319-78D728D26F50}
+	EndGlobalSection
+EndGlobal
