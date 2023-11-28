@@ -7,9 +7,10 @@
              x:DataType="viewmodel:MovieDetailsViewModel"
              xmlns:viewmodel="clr-namespace:CineRankApp.ViewModel"
              xmlns:controls="clr-namespace:CineRankApp.Controls"
+             xmlns:icons="clr-namespace:CineRankApp.Common"
              Title="{Binding CinemaMovie.Title}">
 
-    <ScrollView>
+    <!--*<ScrollView>
         <VerticalStackLayout>
             <Grid ColumnDefinitions="*,Auto,*"
                   RowDefinitions="160,Auto">
@@ -76,5 +77,216 @@
                        Margin="5,0,10,0"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
-    </ScrollView>
+    </ScrollView>*-->
+    <Grid BackgroundColor="#0D0118">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0">
+            <Grid
+                    RowDefinitions="*,*,*,*">
+                <Image Aspect="AspectFill"
+                   Source="{Binding CinemaMovie.PosterPath}"
+                   HeightRequest="500"
+                   VerticalOptions="Start"
+                   Grid.Row="0"/>
+
+                <RoundRectangle Grid.Row="0"
+                        VerticalOptions="Start"
+                        HeightRequest="510"
+                        Opacity="1">
+                    <RoundRectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                            <GradientStop Offset="0.1" Color="#0D0118" />
+                            <GradientStop Offset="0.6" Color="Transparent" />
+                        </LinearGradientBrush>
+                    </RoundRectangle.Fill>
+                </RoundRectangle>
+                <FlexLayout Grid.Row="0"
+                            AlignItems="End"
+                            Margin="20,0,20,50"
+                            Direction="Row" 
+                            JustifyContent="SpaceBetween">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding CinemaMovie.Title}"
+                           MaximumWidthRequest="220"
+                            TextColor="White"
+                            FontSize="Title"
+                            FontAttributes="Bold"/>
+                        <Label Text="{Binding CinemaMovie.FormatedGenres}"
+                           TextColor="White"
+                           MaximumWidthRequest="210"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="0,0,0,-8">
+                        <Label Text="{Binding CinemaMovie.ReleaseDate, StringFormat='Release: {0:dd.MM.yyyy}'}"
+                           TextColor="White"/>
+                        <Label Text="{Binding CinemaMovie.Runtime, StringFormat='{0} minutes'}"
+                           TextColor="White"/>
+                        <controls:RatingControl x:Name="StarRating"
+                                            Value="{Binding CinemaMovie.UserRating}"
+                                            RatingTappedCommand="{Binding RatingStarsTappedCommand}"/>
+                    </VerticalStackLayout>
+                </FlexLayout>
+                <VerticalStackLayout Grid.Row="1" Padding="20">
+                    <Label Text="Overview"
+                       TextColor="White"
+                       FontSize="Title"                     
+                       HorizontalTextAlignment="Center"
+                       CharacterSpacing="1"/>
+                    <Label Text="{Binding CinemaMovie.Overview}"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,20,0,0"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="2" Padding="50" Margin="0,20,0,20">
+                    <Label Text="Trailer"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           Margin="0,0,0,20"
+                           CharacterSpacing="1"/>
+                    <WebView 
+                          Source="{Binding CinemaMovie.TrailerPath}" 
+                          HeightRequest="250" 
+                          WidthRequest="350"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="3">
+                    <Label Text="Starring"
+                           TextColor="White"
+                           FontSize="Title"
+                           Margin="25,0,0,0"
+                           CharacterSpacing="1"/>
+                    <CarouselView 
+                                 ItemsSource="{Binding CinemaMovie.Actors}"
+                                 PeekAreaInsets="80"
+                                 HeightRequest="300"
+                                 Margin="0,0,0,30">
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="0"
+                              Orientation="Horizontal"
+                              SnapPointsAlignment="Center"
+                              SnapPointsType="MandatorySingle"/>
+                        </CarouselView.ItemsLayout>
+
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate x:DataType="model:Cast">
+                                <Grid>
+                                    <Border Grid.RowSpan="3"
+                                           BackgroundColor="#311B45"
+                                           HeightRequest="200"
+                                           Stroke="#6E557C"
+                                           StrokeShape="RoundRectangle 30,30,30,30"
+                                           StrokeThickness="2"
+                                           WidthRequest="200">
+                                        <Grid RowDefinitions=".1*,.5*,.2*">
+                                            <Image Aspect="AspectFill"
+                                                  Source="{Binding Image}"
+                                                  Grid.RowSpan="3"/>
+
+                                            <RoundRectangle Grid.RowSpan="3"
+                                                           CornerRadius="30"
+                                                           HeightRequest="200"
+                                                           WidthRequest="200"
+                                                           Opacity=".7">
+                                                <RoundRectangle.Fill>
+                                                    <LinearGradientBrush EndPoint="0,1">
+                                                        <GradientStop    Offset="0" 
+                                                                         Color="Transparent"/>
+                                                        <GradientStop Offset="1"
+                                                                      Color="#030005"/>
+                                                    </LinearGradientBrush>
+                                                </RoundRectangle.Fill>
+                                            </RoundRectangle>
+
+                                            <VerticalStackLayout Grid.Row="2" 
+                                                                 Margin="15,0,0,0">
+                                                <Label Text="{Binding Name}"
+                                                      TextColor="White"
+                                                      FontSize="17"
+                                                      FontAttributes="Bold"/>
+                                                <Label Text="{Binding CharacterName}"
+                                                     TextColor="White"
+                                                     FontSize="14"/>
+                                            </VerticalStackLayout>
+                                        </Grid>
+                                        <Border.Shadow>
+                                            <Shadow Brush="#C283FD"
+                                                   Opacity=".7"
+                                                   Radius="90"
+                                                   Offset="0,0"/>
+                                        </Border.Shadow>
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+
+                    </CarouselView>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+        <Grid Grid.Row="1"
+              Margin="15,0,15,0"
+              HeightRequest="75"
+              VerticalOptions="End">
+
+            <Border BackgroundColor="#0D0118"
+                     Stroke="#311B45"
+                     StrokeShape="RoundRectangle 30,30,30"
+                     StrokeThickness="2">
+
+                <Grid ColumnDefinitions="*,*"
+                       RowSpacing="1"
+                       RowDefinitions="*,*">
+                    <Label Grid.Row="1"
+                            FontSize="12"
+                            HorizontalOptions="Center"
+                            TextColor="White"
+                            Text="Home"/>
+
+                    <Label Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="12"
+                            HorizontalOptions="Center"
+                            TextColor="White"
+                            Text="Favourites"/>
+
+                    <Label FontFamily="MaterialIconsRegular"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            TextColor="#AC9DB9"
+                            Text="{x:Static icons:MaterialIconsFont.Home}"
+                            VerticalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MovieDetailsViewModel}}, Path=GoToHomePageCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Grid.Column="1"
+                            FontFamily="MaterialIconsRegular"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            TextColor="#AC9DB9"
+                            Text="{x:Static icons:MaterialIconsFont.Star}"
+                            VerticalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                          Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MovieDetailsViewModel}}, Path=GoToFavouriteMoviesCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Border.Shadow>
+                    <Shadow Brush="#C283FD"
+                             Opacity=".7"
+                             Radius="90"
+                             Offset="0,0"/>
+                </Border.Shadow>
+            </Border>
+
+        </Grid>
+    </Grid>
+
 </ContentPage>

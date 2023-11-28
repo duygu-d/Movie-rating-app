@@ -56,10 +56,10 @@
                 <Setter Property="CornerRadius" Value="20" />
             </Style>
             <Style x:Key="CardView" TargetType="Frame">
-                <Setter Property="BorderColor" Value="#DDDDDD" />
+                <Setter Property="BorderColor" Value="#6E557C" />
                 <Setter Property="HasShadow" Value="{OnPlatform iOS=false, MacCatalyst=false, Default=true}" />
                 <Setter Property="Padding" Value="0" />
-                <Setter Property="Background" Value="{StaticResource LightBackground}" />
+                <Setter Property="Background" Value="#271438" />
                 <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="IsClippedToBounds" Value="True"/>
             </Style>

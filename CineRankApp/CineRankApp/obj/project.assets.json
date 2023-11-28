@@ -28403,11 +28403,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Laptop\\Desktop\\CineRankApp\\CineRankApp\\CineRankApp.csproj",
+      "projectUniqueName": "C:\\Users\\Laptop\\Desktop\\movie-rating-app\\Movie-rating-app\\CineRankApp\\CineRankApp\\CineRankApp.csproj",
       "projectName": "CineRankApp",
-      "projectPath": "C:\\Users\\Laptop\\Desktop\\CineRankApp\\CineRankApp\\CineRankApp.csproj",
+      "projectPath": "C:\\Users\\Laptop\\Desktop\\movie-rating-app\\Movie-rating-app\\CineRankApp\\CineRankApp\\CineRankApp.csproj",
       "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Laptop\\Desktop\\CineRankApp\\CineRankApp\\obj\\",
+      "outputPath": "C:\\Users\\Laptop\\Desktop\\movie-rating-app\\Movie-rating-app\\CineRankApp\\CineRankApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

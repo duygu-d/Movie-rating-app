@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QxOZVdLu023uVQ7HCeTyKSapdEbpdcVQ5mG0GDmzvp34XTQFLAIXZX1cjmUNZv+YGwOJeoeX4Wv1j7SNEfzK4g==",
+  "dgSpecHash": "BiWe4sNROMPbrsZTtfWXbBJrq4SO98mp/FryJv5zUmXcA3SokzVFjCfynjfC9fW/PC1rPdKjJcGJo+Gcw52aLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Laptop\\Desktop\\CineRankApp\\CineRankApp\\CineRankApp.csproj",
+  "projectFilePath": "C:\\Users\\Laptop\\Desktop\\movie-rating-app\\Movie-rating-app\\CineRankApp\\CineRankApp\\CineRankApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Laptop\\.nuget\\packages\\communitytoolkit.maui.mediaelement\\2.0.0\\communitytoolkit.maui.mediaelement.2.0.0.nupkg.sha512",
     "C:\\Users\\Laptop\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",

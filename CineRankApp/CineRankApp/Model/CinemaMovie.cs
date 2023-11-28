@@ -9,7 +9,7 @@ namespace CineRankApp.Model
 {
     public class CinemaMovie
     {
-        private const string _basePath = "https://image.tmdb.org/t/p/original";
+        //private const string _basePath = "https://image.tmdb.org/t/p/original";
 
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -23,6 +23,9 @@ namespace CineRankApp.Model
         [JsonProperty("genres")]
         public List<Genre> Genres { get; set; }
 
+        [JsonIgnore]
+        public List<Cast> Actors { get; set; }
+
         [JsonProperty("overview")]
         public string Overview { get; set; }
 
@@ -32,18 +35,18 @@ namespace CineRankApp.Model
         [JsonProperty("runtime")]
         public string Runtime { get; set; }
 
-        [JsonProperty("poster_path")]
-        private string _posterPath;
+        
+        //private string _posterPath;
 
-        public string PosterPath
-        {
-            get => $"{_basePath}{_posterPath}";
-            set => _posterPath = value;
-        }
+        [JsonProperty("poster_path")]
+        public string PosterPath { get; set; }
 
 
         [JsonIgnore]
         public int UserRating { get; set; } = 0;
+
+        [JsonIgnore]
+        public string FormatedGenres { get; set; }
 
         [JsonProperty("key")]
         public string TrailerPath { get; set; }

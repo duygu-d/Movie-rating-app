@@ -51,16 +51,15 @@ namespace CineRankApp.Controls
 
         public void OnStarTapped(int starValue)
         {
-            if (_isReadOnly)
+            if (_isReadOnly || Value > 0)
             {
                 return;
             }
             UpdateStars(starValue,Color);
-
+            _isReadOnly = true;
 
             RatingTappedCommand?.Execute(starValue);
 
-            _isReadOnly = true;
         }
 
         private void UpdateStars(int starValue, Color color)

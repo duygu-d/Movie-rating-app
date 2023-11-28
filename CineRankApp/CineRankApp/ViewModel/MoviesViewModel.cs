@@ -35,6 +35,8 @@ namespace CineRankApp.ViewModel
                 return;
             }
             CinemaMovie cinemaMovie = await _movieService.GetMovieDetails(movie.Id);
+            cinemaMovie.FormatedGenres = movie.FormatedGenres;
+            cinemaMovie.PosterPath = movie.PosterPath;
             await Shell.Current.GoToAsync($"{nameof(MovieDetailsPage)}",true,
                 new Dictionary<string, object>
                 {

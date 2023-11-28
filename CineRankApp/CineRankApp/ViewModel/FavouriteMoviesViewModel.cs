@@ -64,12 +64,18 @@ namespace CineRankApp.ViewModel
             {
                 return;
             }
-            CinemaMovie cinemaMovie = await _movieService.GetMovieDetails(movie.Id);
+            CinemaMovie cinemaMovie = FavouriteMovies.Where(fav=> fav.Id == movie.Id).FirstOrDefault();
             await Shell.Current.GoToAsync($"{nameof(MovieDetailsPage)}", true,
                 new Dictionary<string, object>
                 {
                     {"CinemaMovie", cinemaMovie }
                 });
+        }
+
+        [RelayCommand]
+        public async Task GoToHomePage()
+        {
+            await Shell.Current.GoToAsync("///MainPage");
         }
     }
 }

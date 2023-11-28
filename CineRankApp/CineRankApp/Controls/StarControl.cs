@@ -20,7 +20,7 @@ namespace CineRankApp.Controls
             {
                 Text = icon,
                 FontFamily = "MaterialIconsRegular",
-                FontSize = 25,
+                FontSize = 30,
                 TextColor = color
             };
 

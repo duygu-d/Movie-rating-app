@@ -15,6 +15,7 @@
         </member>
         <member name="T:CineRankApp.ViewModel.FavouriteMoviesViewModel">
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="F:CineRankApp.ViewModel.FavouriteMoviesViewModel.goToMovieDetailsCommand">
             <summary>The backing field for <see cref="P:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToMovieDetailsCommand"/>.</summary>
@@ -22,7 +23,14 @@
         <member name="P:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToMovieDetailsCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToMovieDetails(CineRankApp.Model.CinemaMovie)"/>.</summary>
         </member>
+        <member name="F:CineRankApp.ViewModel.FavouriteMoviesViewModel.goToHomePageCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToHomePageCommand"/>.</summary>
+        </member>
+        <member name="P:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToHomePageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CineRankApp.ViewModel.FavouriteMoviesViewModel.GoToHomePage"/>.</summary>
+        </member>
         <member name="T:CineRankApp.ViewModel.MovieDetailsViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -30,11 +38,17 @@
         <member name="P:CineRankApp.ViewModel.MovieDetailsViewModel.CinemaMovie">
             <inheritdoc cref="F:CineRankApp.ViewModel.MovieDetailsViewModel._cinemaMovie"/>
         </member>
-        <member name="F:CineRankApp.ViewModel.MovieDetailsViewModel.goBackCommand">
-            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoBackCommand"/>.</summary>
+        <member name="F:CineRankApp.ViewModel.MovieDetailsViewModel.goToHomePageCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoToHomePageCommand"/>.</summary>
         </member>
-        <member name="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoBackCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CineRankApp.ViewModel.MovieDetailsViewModel.GoBackAsync"/>.</summary>
+        <member name="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoToHomePageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CineRankApp.ViewModel.MovieDetailsViewModel.GoToHomePage"/>.</summary>
+        </member>
+        <member name="F:CineRankApp.ViewModel.MovieDetailsViewModel.goToFavouriteMoviesCommand">
+            <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoToFavouriteMoviesCommand"/>.</summary>
+        </member>
+        <member name="P:CineRankApp.ViewModel.MovieDetailsViewModel.GoToFavouriteMoviesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CineRankApp.ViewModel.MovieDetailsViewModel.GoToFavouriteMovies"/>.</summary>
         </member>
         <member name="F:CineRankApp.ViewModel.MovieDetailsViewModel.ratingStarsTappedCommand">
             <summary>The backing field for <see cref="P:CineRankApp.ViewModel.MovieDetailsViewModel.RatingStarsTappedCommand"/>.</summary>

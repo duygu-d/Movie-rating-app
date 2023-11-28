@@ -12,45 +12,45 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = CineRankApp
-build_property.ProjectDir = C:\Users\Laptop\Desktop\CineRankApp\CineRankApp\
+build_property.ProjectDir = C:\Users\Laptop\Desktop\movie-rating-app\Movie-rating-app\CineRankApp\CineRankApp\
 
-[C:/Users/Laptop/Desktop/CineRankApp/CineRankApp/App.xaml]
+[C:/Users/Laptop/Desktop/movie-rating-app/Movie-rating-app/CineRankApp/CineRankApp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CineRankApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/Laptop/Desktop/CineRankApp/CineRankApp/AppShell.xaml]
+[C:/Users/Laptop/Desktop/movie-rating-app/Movie-rating-app/CineRankApp/CineRankApp/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CineRankApp.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Laptop/Desktop/CineRankApp/CineRankApp/MainPage.xaml]
+[C:/Users/Laptop/Desktop/movie-rating-app/Movie-rating-app/CineRankApp/CineRankApp/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CineRankApp.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/Laptop/Desktop/CineRankApp/CineRankApp/Resources/Styles/Colors.xaml]
+[C:/Users/Laptop/Desktop/movie-rating-app/Movie-rating-app/CineRankApp/CineRankApp/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CineRankApp.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/Laptop/Desktop/CineRankApp/CineRankApp/Resources/Styles/Styles.xaml]
+[C:/Users/Laptop/Desktop/movie-rating-app/Movie-rating-app/CineRankApp/CineRankApp/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CineRankApp.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/Laptop/Desktop/CineRankApp/CineRankApp/View/FavouriteMovies.xaml]
+[C:/Users/Laptop/Desktop/movie-rating-app/Movie-rating-app/CineRankApp/CineRankApp/View/FavouriteMovies.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CineRankApp.View.FavouriteMovies.xaml
 build_metadata.AdditionalFiles.TargetPath = View\FavouriteMovies.xaml
 build_metadata.AdditionalFiles.RelativePath = View\FavouriteMovies.xaml
 
-[C:/Users/Laptop/Desktop/CineRankApp/CineRankApp/View/MovieDetailsPage.xaml]
+[C:/Users/Laptop/Desktop/movie-rating-app/Movie-rating-app/CineRankApp/CineRankApp/View/MovieDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CineRankApp.View.MovieDetailsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\MovieDetailsPage.xaml

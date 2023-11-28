@@ -23,31 +23,43 @@ namespace CineRankApp.Services
         private List<CinemaMovie> _trendingMovies = new List<CinemaMovie>();
         private CinemaMovie _movie = new CinemaMovie();
         private List<Genre> _allGenres = new List<Genre>();
+        private List<Cast> _cast = new List<Cast>();
         private string _key = "";
         private HttpClient _httpClient;
 
 
         public MovieService()
         {
-             _httpClient = new HttpClient() { BaseAddress = _basesUrl };
+            _httpClient = new HttpClient() { BaseAddress = _basesUrl };
             _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", "application/json");
 
         }
 
         private async Task<string> GetTrailerKey(string movieId)
         {
-            if (!(string.IsNullOrEmpty(_key)))
-            {
-                return _key;
-            }
             var trailerKeyJson = await GetInfoJSON($"movie/{movieId}/videos?api_key={_apiKey}");
             _key = JObject.Parse(trailerKeyJson)["results"]
+                                .Where(x => x["name"]?.ToString().ToLower() == "official trailer")
                                 .Select(x => x["key"])
                                 .FirstOrDefault()?
                                 .ToString();
 
             return _key;
 
+        }
+
+        private async Task<List<Cast>> GetMovieCast(string movieId)
+        {
+            var castJson = await GetInfoJSON($"movie/{movieId}/credits?api_key={_apiKey}");
+            _cast = JObject.Parse(castJson)["cast"].ToObject<List<Cast>>();
+
+            return _cast;
+        }
+
+        private async Task FilterActors(CinemaMovie movie)
+        {
+            List<Cast> cast = await GetMovieCast(movie.Id);
+            movie.Actors = cast.Where(c => c.Department.ToLower() == "acting" && !(string.IsNullOrEmpty(c.ProfilePath))).Take(15).ToList();
         }
 
         public async Task<string> GetInfoJSON(string path)
@@ -79,19 +91,28 @@ namespace CineRankApp.Services
             {
                 _allGenres = await GetAllGenres();
             }
-                foreach (var movie in movies)
+            foreach (var movie in movies)
+            {
+                if (movie.Genres == null)
                 {
-                    if (movie.Genres == null)
-                    {
-                        movie.Genres = new List<Genre>();
-                    }
-
-                    foreach (var id in movie.GenreIds)
-                    {
-                        Genre matchingGenre = _allGenres.FirstOrDefault(genre => genre.Id == id);
-                        movie.Genres.Add(matchingGenre);
-                    }
+                    movie.Genres = new List<Genre>();
                 }
+
+                foreach (var id in movie.GenreIds)
+                {
+                    Genre matchingGenre = _allGenres.FirstOrDefault(genre => genre.Id == id);
+                    movie.Genres.Add(matchingGenre);
+                }
+            }
+        }
+
+        private void SetPosterPath(List<CinemaMovie> movies)
+        {
+            foreach (var movie in movies)
+            {
+                var posterKey = movie.PosterPath;
+                movie.PosterPath = $"https://image.tmdb.org/t/p/original{posterKey}";
+            }
         }
 
         public async Task<List<CinemaMovie>> GetAllMovies()
@@ -102,8 +123,10 @@ namespace CineRankApp.Services
             }
             var moviesJSON = await GetInfoJSON($"discover/movie?api_key={_apiKey}");
             _movies = JObject.Parse(moviesJSON)["results"].ToObject<List<CinemaMovie>>();
+            SetPosterPath(_movies);
             await SetMovieGenres(_movies);
-            
+            GenresFormatter(_movies);
+
             return _movies;
         }
 
@@ -115,7 +138,9 @@ namespace CineRankApp.Services
             }
             var trendingMoviesJSON = await GetInfoJSON($"trending/movie/day?api_key={_apiKey}");
             _trendingMovies = JObject.Parse(trendingMoviesJSON)["results"].ToObject<List<CinemaMovie>>();
+            SetPosterPath(_trendingMovies);
             await SetMovieGenres(_trendingMovies);
+            GenresFormatter(_trendingMovies);
 
             return _trendingMovies;
         }
@@ -137,7 +162,8 @@ namespace CineRankApp.Services
             _movie = JsonConvert.DeserializeObject<CinemaMovie>(movieJson);
 
             string key = await GetTrailerKey(movieId);
-            _movie.TrailerPath = $"https://www.youtube.com/watch?v={key}";
+            _movie.TrailerPath = $"https://www.youtube.com/embed/{key}";
+            await FilterActors(_movie);
 
             return _movie;
         }
@@ -147,8 +173,8 @@ namespace CineRankApp.Services
             string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string filePath = Path.Combine(folderPath, "favouriteData.json");
 
-           string jsonString = System.Text.Json.JsonSerializer.Serialize(favMovies);
-           await File.WriteAllTextAsync(filePath, jsonString);
+            string jsonString = System.Text.Json.JsonSerializer.Serialize(favMovies);
+            await File.WriteAllTextAsync(filePath, jsonString);
             string fileContents = File.ReadAllText(filePath);
             Console.WriteLine(fileContents);
         }
@@ -167,6 +193,15 @@ namespace CineRankApp.Services
                 _favMovies = System.Text.Json.JsonSerializer.Deserialize<List<CinemaMovie>>(jsonFromFile);
             }
             return _favMovies;
+        }
+
+        private void GenresFormatter(List<CinemaMovie> movies)
+        {
+            foreach (var movie in movies)
+            {
+                movie.FormatedGenres = string.Join(" | ", movie.Genres);
+
+            }
         }
     }
 }

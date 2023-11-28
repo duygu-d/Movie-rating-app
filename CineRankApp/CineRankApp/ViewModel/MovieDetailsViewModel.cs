@@ -10,6 +10,7 @@ using CommunityToolkit.Mvvm.Input;
 using CineRankApp.Controls;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using CineRankApp.View;
 
 namespace CineRankApp.ViewModel
 {
@@ -29,9 +30,15 @@ namespace CineRankApp.ViewModel
         }
 
         [RelayCommand]
-        public async Task GoBackAsync()
+        public async Task GoToHomePage()
         {
             await Shell.Current.GoToAsync("..");
+        }
+
+        [RelayCommand]
+        public async Task GoToFavouriteMovies()
+        {
+            await Shell.Current.GoToAsync(nameof(FavouriteMovies));
         }
 
         [RelayCommand]
