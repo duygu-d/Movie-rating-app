@@ -1,7 +1,7 @@
 # Movie-rating-app
 CineRank is an application for rating movies, developed using the .NET MAUI framework. It incorporates a unique star-based rating system to facilitate user feedback. The primary objective of this application is to keep users informed about current trending and recently released movies.
 
-Within the user-friendly interface of CineRank, individuals can access comprehensive information about each movie. Notably, the application features a straightforward 5-star rating system, allowing users to express their opinions effortlessly. Movies rated with 5 or 4 stars are systematically stored in a designated directory within the application's data storage, creating a catalog of preferred films accessible through the Favorites movie view.
+Within the user-friendly interface of CineRank, individuals can access comprehensive information about each movie. Notably, the application features a straightforward 5-star rating system, allowing users to express their opinions effortlessly. Movies rated with 5 or 4 stars are systematically stored in a designated directory within the application's data storage, creating a catalog of preferred films accessible through the Favorite movies view.
 
 To ensure the accuracy and currency of movie details, CineRank employs secure HTTPS requests to interact with themoviedb.org's API. This robust integration enables real-time retrieval of extensive movie information, enhancing the user experience with comprehensive insights into each film.
 
