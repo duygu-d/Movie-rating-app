@@ -42,16 +42,22 @@ namespace CineRankApp.Controls
             set=>SetValue(RatingTappedCommandProperty, value);
         }
 
+        [Obsolete]
         public RatingControl()
         {
             PropertyChanged += OnRatingControlPropertyChanged;
-            UpdateStars(Value, Color);
+            MessagingCenter.Subscribe<object, int>(this, "UserRatingChanged", (sender, userRating) =>
+            {
+                Value = userRating;
+            });
 
+            UpdateStars(Value, Color);
         }
+
 
         public void OnStarTapped(int starValue)
         {
-            if (_isReadOnly || Value > 0)
+            if (_isReadOnly)
             {
                 return;
             }
@@ -78,13 +84,13 @@ namespace CineRankApp.Controls
         {
             if (e.PropertyName == nameof(Value))
             {
-                int newValue = Value;
-                UpdateStars(newValue, Color);
+                UpdateStars(Value, Color);
+                _isReadOnly = true;
             }
+
             else if (e.PropertyName == nameof(Color))
             {
-                Color newColor = Color;
-                UpdateStars(Value, newColor);
+                UpdateStars(Value, Color);
             }
         }
 
