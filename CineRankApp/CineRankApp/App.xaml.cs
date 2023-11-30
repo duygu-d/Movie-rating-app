@@ -1,4 +1,5 @@
 ﻿using CineRankApp.View;
+using CineRankApp.ViewModel;
 
 namespace CineRankApp
 {

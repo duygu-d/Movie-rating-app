@@ -27,7 +27,8 @@ namespace CineRankApp.ViewModel
 
         }
 
-        [RelayCommand] 
+        [RelayCommand]
+        [Obsolete]
         public async Task GoToMovieDetails(CinemaMovie movie)
         {
             if(movie == null)
@@ -37,11 +38,25 @@ namespace CineRankApp.ViewModel
             CinemaMovie cinemaMovie = await _movieService.GetMovieDetails(movie.Id);
             cinemaMovie.FormatedGenres = movie.FormatedGenres;
             cinemaMovie.PosterPath = movie.PosterPath;
+            SetUserRating(cinemaMovie);
             await Shell.Current.GoToAsync($"{nameof(MovieDetailsPage)}",true,
                 new Dictionary<string, object>
                 {
                     {"CinemaMovie", cinemaMovie }
                 });
+        }
+
+        [Obsolete]
+        private async void SetUserRating(CinemaMovie movie)
+        {
+            var favMovies = await _movieService.GetFavMovies();
+            int rating = favMovies.Where(m => m.Title.Equals(movie.Title)).Select(m => m.UserRating).FirstOrDefault();
+
+            if(rating > 0)
+            {
+                movie.UserRating = rating;
+                MessagingCenter.Send<object, int>(this, "UserRatingChanged", movie.UserRating);
+            }
         }
 
         [RelayCommand]
